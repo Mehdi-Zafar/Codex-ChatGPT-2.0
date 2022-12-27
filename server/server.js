@@ -15,6 +15,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const PORT = 4000
+
 app.get('/', async (req,res)=>{
     res.status(200).send({
         message:'Hello from CodeX',
@@ -42,6 +44,6 @@ app.post('/', async (req,res)=>{
     }
 })
 
-app.listen(5000,()=>console.log('Server is running on port http://localhost:5000'))
+app.listen(PORT,()=>console.log('Server is running on port http://localhost:'+PORT))
 
-module.exports = app;
+export default app;
